@@ -1,0 +1,65 @@
+
+html, body {font: 14px/1em 'Open Sans'; background: #000;}
+body, ul, li, h4 {margin: 0; padding: 0; list-style-type: none;}
+strong, em {font-weight: normal; font-style: normal;}
+
+#body {position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1;}
+
+.splash, .viewer, .menu {position: relative; width: 100%; height: 100%;}
+
+.splash {background: #FFF;}
+.splash span.by {position: absolute; left: 0; right: 0; bottom: 10vh; text-align: center; font-size: 20px; line-height: 1em; font-weight: 700;}
+
+.viewer .navbar {position: absolute; left: 0; top: 0; right: 0; display: table; width: 100%; height: 30px; font-size: 12px; line-height: 1em; color: #FFF; background: #1F1F1F;}
+.viewer .navbar div.column {display: table-cell; width: 33%; vertical-align: middle; padding: 0 8px;}
+.viewer .navbar div.column span.helpInfo {display: none;}
+.viewer .navbar div.column span.helpInfo.visible {display: block;}
+.viewer .navbar div.column span.helpInfo span.key {display: inline-block; padding: 1px 2px; margin-right: 2px; background: #717171; border-left: 1px solid #A7A7A7; border-top: 1px solid #A7A7A7;}
+.viewer .navbar div.column.scale {text-align: center;}
+.viewer .navbar div.column.info {text-align: right;}
+.viewer .view {position: absolute; left: 0; top: 30px; right: 0; bottom: 0; overflow: hidden; background: #AAA;}
+.viewer .view canvas {position: absolute;}
+
+.help {position: absolute; display: none; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; z-index: 2; background: rgba(0, 0, 0, 0.6);}
+.help.visible {display: table;}
+.help div.keyboard {display: table-cell; vertical-align: middle;}
+.help div.keyboard ul {width: 85%; margin: 0 auto;}
+.help div.keyboard ul li {display: table; width: 100%;}
+.help div.keyboard ul li span.button {display: table-cell; width: 33%; padding: 4px; background: #717171; color: #FFF; border-left: 1px solid #A2A2A2; border-top: 1px solid #A2A2A2; border-right: 1px solid #505050; border-bottom: 1px solid #505050; font-weight: 700; text-align: center;}
+.help div.keyboard ul li span.button.half {width: 16.5%;}
+.help div.keyboard ul li span.button em {display: block; font-size: 12px; line-height: 1.2em; color: #D3D3D3;}
+
+.menu {background: #AFAFAF;}
+.menu .navbar {position: absolute; left: 0; top: 0; right: 0; display: table; width: 100%; height: 30px;}
+.menu .navbar strong {display: table-cell; vertical-align: middle; text-align: center; color: #FFF; background: #E01518; font-weight: 700;}
+.menu ul.items {position: absolute; left: 0; top: 30px; right: 0; bottom: 0; overflow: scroll;}
+.menu ul.items li.item {padding: 10px; background: #FFF; border-bottom: 1px solid #D3D3D3;}
+.menu ul.items li.item.selected {background: #FFD1D1;}
+.menu ul.items li.item span.icon {display: inline-block; vertical-align: middle; width: 16px; height: 16px; margin-right: 5px; background-size: 16px 16px;}
+.menu ul.items li.item span.icon.return {background-image: url('./icon-return.svg');}
+.menu ul.items li.item span.icon.folder {background-image: url('./icon-folder.svg');}
+.menu ul.items li.item span.icon.pdf {background-image: url('./icon-pdf.svg');}
+.menu ul.items li.item span.icon.history {background-image: url('./icon-history.svg');}
+.menu ul.items li.item span.icon.delete {background-image: url('./icon-delete.svg');}
+.menu ul.items li.item span.icon.star {background-image: url('./icon-star.svg');}
+.menu ul.items li.item span.icon.exit {background-image: url('./icon-exit.svg');}
+.menu ul.items li.item strong.title {display: inline-block; vertical-align: middle; line-height: 1.2em;}
+
+#loading {position: fixed; left: 50%; top: 50%; z-index: 100; display: none; margin: -7vh 0 0 -7vh; width: 14vh; height: 14vh;}
+#loading .bounce1, #loading .bounce2 {width: 100%; height: 100%; border-radius: 50%; opacity: 0.4; background: #222; position: absolute; top: 0; left: 0; -webkit-animation: sk-bounce 2.0s infinite ease-in-out; animation: sk-bounce 2.0s infinite ease-in-out;}
+#loading .bounce2 {-webkit-animation-delay: -1.0s; animation-delay: -1.0s;}
+@-webkit-keyframes sk-bounce {
+	0%, 100% {-webkit-transform: scale(0.0);}
+	50% {-webkit-transform: scale(1.0);}
+}
+@keyframes sk-bounce {
+	0%, 100% {transform: scale(0.0); -webkit-transform: scale(0.0);} 
+	50% {transform: scale(1.0); -webkit-transform: scale(1.0);}
+}
+
+#prompt {position: fixed; left: 0; bottom: 0; right: 0; z-index: 2; display: none; padding: 10px; text-align: center; background: #C6C6C6;}
+#prompt h4 {padding: 0 0 8px; line-height: 1.2em;}
+#prompt input.input {padding: 5px; margin: 0 0 8px; box-sizing: border-box; width: 80%; background: #FFF; border: 1px solid #A5A5A5;}
+#prompt input.input:invalid {background: #FFD3D3; outline: none; border-color: #C94040; box-shadow: none;}
+#prompt ul.choices li.choice {display: inline-block; padding: 6px 8px; color: #FFF; background: #939393;}
+#prompt ul.choices li.choice.selected {background: #E01518;}

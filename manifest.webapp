@@ -1,0 +1,60 @@
+{
+	"type": "privileged",
+	"name": "PDF Reader",
+	"subtitle": "Simple PDF Reader.",
+	"description": "PDF Reader is the best PDF reading application on KaiOS. This application is designed to work with small screens.",
+
+	"version": "1.0.10",
+	"launch_path": "/index.html",
+	"icons": {
+		"56": "/icons/icon56x56.png",
+		"112": "/icons/icon112x112.png"
+	},
+	"developer": {
+		"name": "n4no.com",
+		"url": "http://kaios.n4no.com"
+	},
+	"theme_color": "#830808",
+	"fullscreen": "true",
+
+	"permissions": {
+		"mobiledata": {},
+		"device-storage:sdcard": {
+			"description": "Required for browsing files.",
+			"access": "readonly"
+		}
+	},
+
+	"dependencies": {
+		"ads-sdk": "1.4.1"
+	},
+
+	"default_locale": "en-US",
+	"locales": {
+		"en-US": {
+			"name": "PDF Reader",
+			"subtitle": "Simple PDF Reader.",
+			"description": "PDF Reader is the best PDF reading application on KaiOS. This application is designed to work with small screens."
+		}
+	},
+
+	"activities": {
+		"open": {
+			"href": "/index.html",
+			"disposition": "window",
+			"filters": {
+				"type": [
+					"application/pdf",
+					"application/x-pdf",
+					"application/acrobat",
+					"applications/vnd.pdf",
+					"application/x-download",
+					"application/download",
+					"text/pdf",
+					"text/x-pdf"
+				]
+			},
+			"returnValue": false
+		}
+	}
+}

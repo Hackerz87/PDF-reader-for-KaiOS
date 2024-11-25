@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="n4no.com" />
+	<title>PDF Reader</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="shortcut icon" href="./icons/icon56x56.png?v=3" />
+	<link rel="stylesheet" href="./styles.css" />
+
+	<script src="./kaiads.js"></script>
+	<script src="./bundle.js"></script>
+</head>
+<body>
+	<div id="body"></div>
+
+	<div id="prompt">
+		<h4 class="question"></h4>
+		<input class="input" autocomplete="off" type="text" required />
+		<ul class="choices">
+			<li class="choice yes">OK</li>
+			<li class="choice no">CANCEL</li>
+		</ul>
+	</div>
+
+	<span id="loading">
+		<span class="bounce1"></span>
+		<span class="bounce2"></span>
+	</span>
+</body>
+</html>
